@@ -1,0 +1,17 @@
+{application, mprom,
+ [{description, "An OTP application"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {mod, {mprom_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    elli,
+    prometheus
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
