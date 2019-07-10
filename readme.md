@@ -1,8 +1,8 @@
 # mprom
 
-A rebar3 erlang otp application that serves up prometheus metrics.
-
 _m is for `micro`_
+
+A _tiny_ rebar3 erlang otp application that serves up prometheus metrics.
 
 ## build
 
@@ -17,8 +17,9 @@ Add to an existing application (the common and only use case):
 
 {deps,  
 	[
-		{mprom, {git, "git://github.com/toddg/micro-prom.git", {tag, "0.0.1"}}}
+		{mprom, {git, "git://github.com/toddg/mprom.git", {branch, "master"}}}
 	]}.
+
 ```
 
 ## configuration
