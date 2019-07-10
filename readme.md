@@ -2,6 +2,7 @@
 
 A rebar3 erlang otp application that serves up prometheus metrics.
 
+_m is for `micro`_
 
 ## build
 
@@ -22,18 +23,16 @@ Add to an existing application (the common and only use case):
 
 ## configuration
 
-* `prefix` : is used to prefix emitted metric names and functions as a namespace
 * `port` : what port to serve `/metrics` on
+* `registry` : namespace the metrics into a separate registry, though `default` is probably fine
 
 _sys.config_
 ```Erlang
   {mprom, [
-  		{prefix, "foo"},
+  		{registry, default},
 		{port, 4444},
 	]}
 ```
 
 ## register metrics
-
-
 
