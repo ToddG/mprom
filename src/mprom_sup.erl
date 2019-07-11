@@ -33,7 +33,6 @@ start_link() ->
 %%
 %% See: https://github.com/elli-lib/elli
 init([]) ->
-    {ok, _} = application:ensure_all_started(mprom),
     Port = application:get_env(mprom, port, 4444),
     ElliOpts = [{callback, prometheus_elli_callback}, {port, Port}],
     ElliSpec = {
