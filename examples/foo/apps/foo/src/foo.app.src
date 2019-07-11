@@ -1,0 +1,16 @@
+{application, foo,
+ [{description, "An Example OTP application that uses mprom for exposing metrics via prometheus"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {foo_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    mprom
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["MIT"]},
+  {links, []}
+ ]}.

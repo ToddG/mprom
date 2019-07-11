@@ -1,6 +1,6 @@
 {application, mprom,
- [{description, "An OTP application"},
-  {vsn, "0.0.1"},
+ [{description, "Micro Prometheus Metrics Exporter"},
+  {vsn, "1.0.0"},
   {registered, []},
   {mod, {mprom_app, []}},
   {applications,
@@ -12,6 +12,6 @@
   {env,[]},
   {modules, []},
 
-  {licenses, ["Apache 2.0"]},
+  {licenses, ["MIT"]},
   {links, []}
  ]}.
