@@ -1,9 +1,9 @@
 %%%-------------------------------------------------------------------
-%% @doc mprom top level supervisor.
+%% @doc foo top level supervisor.
 %% @end
 %%%-------------------------------------------------------------------
 
--module(mprom_sup).
+-module(foo_sup).
 
 -behaviour(supervisor).
 
@@ -30,16 +30,16 @@ start_link() ->
 %% Optional keys are restart, shutdown, type, modules.
 %% Before OTP 18 tuples must be used to specify a child. e.g.
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
-%%
-%% See: https://github.com/elli-lib/elli
 init([]) ->
-    Port = application:get_env(mprom, port, 4444),
-    ElliOpts = [{callback, prometheus_elli_callback}, {port, Port}],
-    ElliSpec = {
-        prometheus_metrics,
-        {elli, start_link, [ElliOpts]},
-        permanent,
-        5000,
-        worker,
-        [elli]},
-    {ok, { {one_for_one, 5, 10}, [ElliSpec]} }.
+    {ok, {{one_for_all, 0, 1},
+          [{tag1,
+            {bar_server, start_link, []},
+            permanent,
+            10000,
+            worker,
+            [bar_server]}
+           ]}}.
+
+%%====================================================================
+%% Internal functions
+%%====================================================================

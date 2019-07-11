@@ -1,0 +1,6 @@
+-sname foo
+
+-setcookie foo_cookie
+
++K true
++A30
